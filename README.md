@@ -1,14 +1,11 @@
-# Welcome to your CDK TypeScript project!
+# SAM + CDK Bug
 
-This is a blank project for TypeScript development with CDK.
+To reproduce:
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
-
-## Useful commands
-
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+```bash
+git clone git@github.com:multimeric/SamInvokeCdk.git
+cd SamInvokeCdk
+npm install
+cdk synth
+sam local invoke customImageLambdaECCCB1E0 -t cdk.out/TmpWxaZf33UfiStack.template.json
+```
